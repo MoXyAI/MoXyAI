@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoXy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Video (for audio) -->
+    <video id="background-audio" autoplay loop muted style="display: none;">
+        <source src="background/background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="particles-js"></div> <!-- Galaxy background -->
+    <div class="container">
+        <header>
+            <h1>MoXy</h1>
+            <nav>
+                <a href="faq.html">FAQ</a> <!-- Link to the FAQ page -->
+            </nav>
+        </header>
+        <main>
+            <div class="content-wrapper">
+                <!-- Economic Calendar (TradingView Widget) -->
+                <div id="economic-calendar">
+                    <h2>Economic Calendar</h2>
+                    <!-- TradingView Economic Calendar Widget -->
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+                        {
+                            "colorTheme": "dark",
+                            "isTransparent": true,
+                            "width": "100%",
+                            "height": "500",
+                            "locale": "en",
+                            "importanceFilter": "-1,0,1"
+                        }
+                        </script>
+                    </div>
+                </div>
+                <!-- Chatbox -->
+                <div id="chatbox">
+                    <div id="chatlog"></div>
+                    <div id="help-text">What can I help with?</div>
+                    <div id="input-area">
+                        <input type="text" id="user-input" placeholder="Message MoXy">
+                        <button id="send-btn">↑</button>
+                    </div>
+                    <div id="disclaimer">
+                        <p><em>Currently in Alpha Release. Features are under development and may change.</em></p>
+                    </div>
+                </div>
+                <!-- Tweet Tracker -->
+                <div id="tweet-tracker">
+                    <h2>Track Tweets</h2>
+                    <div id="tweet-input-area">
+                        <input type="text" id="twitter-username" placeholder="Enter Twitter username">
+                        <button id="add-tweet-btn">Add</button>
+                    </div>
+                    <div id="tracked-tweets"></div>
+                    <div id="tweet-display">
+                        <h3>Recent Tweets</h3>
+                        <div id="tweet-box"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Crypto Ticker -->
+            <div id="crypto-ticker"></div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
